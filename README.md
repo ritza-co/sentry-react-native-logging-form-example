@@ -7,13 +7,16 @@ Simple React Native app demonstrating logging with:
 ## Setup
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
-2. Configure Sentry DSN in `App.js`
-   - Replace the DSN value with your own Sentry project DSN
-   - Get your DSN from your Sentry project settings
+2. Create a React Native project in Sentry and configure the local project with:
+
+```bash
+npx @sentry/wizard@latest -i reactNative --saas --org your-team-name --project your-project-name
+```
 
 ## Run
 

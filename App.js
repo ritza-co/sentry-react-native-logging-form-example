@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { useState } from 'react';
-import * as Sentry from '@sentry/react-native';
 
 export default Sentry.wrap(function App() {
   const [name, setName] = useState('');

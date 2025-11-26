@@ -3,21 +3,6 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { useState } from 'react';
 import * as Sentry from '@sentry/react-native';
 
-Sentry.init({
-  dsn: 'YOUR_SENTRY_DSN_HERE',
-  // Adds more context data to events (IP address, cookies, user, etc.)
-  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
-  sendDefaultPii: true,
-
-  // Enable Logs
-  enableLogs: true,
-
- integrations: [
-    // send console.log, console.warn, and console.error calls as logs to Sentry
-    Sentry.consoleLoggingIntegration({ levels: ["log", "warn", "error"] }),
-  ],
-});
-
 export default Sentry.wrap(function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,13 +10,6 @@ export default Sentry.wrap(function App() {
   const [status, setStatus] = useState(null);
 
   const handleSubmit = () => {
-    Sentry.logger.info(
-      Sentry.logger.fmt`${name} submitted a form.`,
-      {
-        filterid: "01",
-        extraMessage: "This is an extra message."
-      }
-    );
     console.log('Form submission started');
     setStatus(null);
 
